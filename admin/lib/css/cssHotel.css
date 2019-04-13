@@ -1,7 +1,19 @@
 .back{
     background-color: #84c1b2;
 }
-
+body {
+    margin : 0;
+    padding: 0;
+}
 section{
     margin: auto auto;
+}
+.box{
+    display :flex;
+    justify-content: center;
+    align-items: center;
+    border:5px solid beige;
+    height :30vh;
+    min-height: 10vh;
+
 }

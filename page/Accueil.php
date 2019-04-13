@@ -1,36 +1,42 @@
-<form class="needs-validation" novalidate method="post" action="<?php print $_SERVER['PHP_SELF']; ?>">
-    <div class="form-row">
-        <div class="col-md-4 mb-3">
-            <label for="validationCustom01">Destination</label>
-            <input type="text" class="form-control" id="validationCustom01" placeholder="First name"  required>
-            <div class="valid-feedback">
-                Looks good!
+<?php
+//$query='select * from hotel where villehotel='.$_POST['ville'].'';
+?>
+<div class="col-md-4"></div>
+<div class="col-md-4">
+    <form class="needs-validation" novalidate method="post" action="">
+        <div class="form-row">
+            <div class="col-md-4 mb-3">
+                <label for="validationCustom01">Destination</label>
+                <input type="text" name='ville' class="form-control" id="validationCustom01" placeholder="Madrid"  required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+
+
+        </div>
+        <div class="form-row">
+
+            <div class="col-md-3 mb-3">
+                <label for="validationCustom04">Date d'arrivée </label>
+                <input type="date" class="form-control" id="validationCustom04" placeholder="State" required>
+                <div class="invalid-feedback">
+                    Please provide a valid state.
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="validationCustom05">Dtae de départ</label>
+                <input type="date" class="form-control" id="validationCustom05" placeholder="Zip" required>
+                <div class="invalid-feedback">
+                    Please provide a valid zip.
+                </div>
             </div>
         </div>
 
-
-    </div>
-    <div class="form-row">
-
-        <div class="col-md-3 mb-3">
-            <label for="validationCustom04">Date d'arrivée </label>
-            <input type="date" class="form-control" id="validationCustom04" placeholder="State" required>
-            <div class="invalid-feedback">
-                Please provide a valid state.
-            </div>
-        </div>
-        <div class="col-md-3 mb-3">
-            <label for="validationCustom05">Dtae de départ</label>
-            <input type="date" class="form-control" id="validationCustom05" placeholder="Zip" required>
-            <div class="invalid-feedback">
-                Please provide a valid zip.
-            </div>
-        </div>
-    </div>
-
-    <button class="btn btn-primary" type="submit">Rechercher</button>
-</form>
-
+        <button class="btn btn-primary" type="submit">Rechercher</button>
+    </form>
+</div>
+<div class="col-md-4">.col-md-4</div>
 <script>
 // Example starter JavaScript for disabling form submissions if there are invalid fields
     (function () {
