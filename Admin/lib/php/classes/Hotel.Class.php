@@ -1,30 +1,18 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- * Description of Client
- *
- * @author Hp
- */
-class Client {
-  
-
+class Hotel {
     private $_attributs = array();
 
     public function __construct(array $data) {
         $this->hydrate($data);
     }
 
-    //hydrate
+    //hydrate les données dans les setters
     public function hydrate(array $data) {
         foreach ($data as $key => $value) {
             $this->$key = $value;
-            //on affecte ï¿½ la clï¿½ sa valeur; le tableau $data est le resultset, tableau associatif
+            //on affecte � la cl� sa valeur; le tableau $data est le resultset, tableau associatif
         }
     }
 
@@ -35,10 +23,8 @@ class Client {
         }
     }
 
-    //setters
-    public function __set($nom, $valeur) {
+    //setters reçoit les données de la méthode hydrate
+    public function __set($nom, $valeur) { //$key, $value de hydrate
         $this->_attributs[$nom] = $valeur;
     }
-
-
 }
