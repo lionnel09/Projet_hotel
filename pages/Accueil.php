@@ -366,13 +366,7 @@
         </div>
     </div>
 </div>
-<?php
-if (!empty($_SESSION['gen'])) {
-    header('location:index.php?page=achat.php');
-} else {
-    header('location:index.php?page=Rooms.php&dest=');
-}
-?>
+
 
 
 

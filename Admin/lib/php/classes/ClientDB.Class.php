@@ -13,8 +13,8 @@ class ClientDB extends Client {
         try {
             $query = "select * from client where email=:login and mp=:password ";
             $resultset = $this->_db->prepare($query);
-            $resultset->bindValue(':login', $login,PDO::PARAM_STR);
-            $resultset->bindValue(':password', $password,PDO::PARAM_STR);
+            $resultset->bindValue(':login', $login, PDO::PARAM_STR);
+            $resultset->bindValue(':password', $password, PDO::PARAM_STR);
             $resultset->execute();
 
             while ($data = $resultset->fetch()) {
@@ -34,19 +34,19 @@ class ClientDB extends Client {
         //$_db->beginTransaction();
         try {
             $query = "insert into client(adrclient,cpclient,villeclient,telclient,nom,prenom,mp,email)"
-            .$query=" values(:adr,:cp,:ville,:tel,:nom,:prenom,:mp,:email)";
+                    . "values(:adr,:cp,:ville,:tel,:nom,:prenom,:mp,:email)";
             /* $query = "select ajouter_client(:nom_client,:email_client,:password_client,:adresse,:numero,:localite,:cp) as retour"; */
             $resultset = $this->_db->prepare($query);
             $resultset->bindValue(':nom', $data['nom']);
-            $resultset->bindValue(':email', $data['email1']);
-            $resultset->bindValue(':mp', $data['password']);
-            $resultset->bindValue(':adr', $data['adresse']);
+            $resultset->bindValue(':email', $data['email']);
+            $resultset->bindValue(':mp', $data['mp']);
+            $resultset->bindValue(':adr', $data['adr']);
             $resultset->bindValue(':ville', $data['ville']);
             $resultset->bindValue(':prenom', $data['prenom']);
-            $resultset->bindValue(':cp', $data['codepostal']);
+            $resultset->bindValue(':cp', $data['cp']);
             $resultset->bindValue(':tel', $data['tel']);
             $resultset->execute();
-            $retour = $resultset->fetchColumn(0);
+            //$retour = $resultset->fetchColumn(0);
         } catch (PDOException $e) {
             print "Echec de l'insertion " . $e->getMessage();
         }
