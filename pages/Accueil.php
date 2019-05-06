@@ -1,6 +1,7 @@
 
 
-<!-- END nav -->
+
+
 
 <div class="block-31" style="position: relative;">
     <div class="owl-carousel loop-block-31 ">
@@ -36,7 +37,7 @@
         <div class="col-md-12">
 
             <div class="block-32">
-                <form method="post" action="<?php ?>">
+                <form method="post" action="<?php print $_SERVER['PHP_SELF']; ?>">
                     <div class="row">
                         <div class="col-md-6 mb-3 mb-lg-0 col-lg-3">
                             <label for="checkin">Destination </label>
@@ -365,8 +366,14 @@
         </div>
     </div>
 </div>
+<?php
+if (!empty($_SESSION['gen'])) {
+    header('location:index.php?page=achat.php');
+} else {
+    header('location:index.php?page=Rooms.php&dest=');
+}
+?>
 
-    
 
-<!-- loader -->
+
 
