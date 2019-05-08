@@ -59,11 +59,13 @@ $cnx = Connexion:: getInstance($dsn, $user, $pass);
             $_SESSION['page'] = $_GET['page'];
         }
         $path = "./pages/" . $_SESSION['page'];
+        ?>
+        <p color='black' ><?php print $path; ?></p><?php
         if (file_exists($path)) {
             include ($path);
             ?>
 
-            
+
             <footer class="footer" id="ancre">
                 <div class="container">
                     <div class="row mb-5">
